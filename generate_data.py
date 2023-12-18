@@ -130,8 +130,6 @@ data["ip4_add"] = [fake.ipv4_private() for _ in range(num_servers)]
 
 data["owner_id"] = [np.random.choice(owner_id) for _ in range(num_servers)]
 
-error_term_in_days = np.random.normal(0, 5, num_servers)
-
 data["last_update_date"] = [
     datetime.now() - timedelta(get_date(vul_pat, tot_vul))
     for vul_pat, tot_vul in zip(data["vul_patched"], data["total_vul"])
