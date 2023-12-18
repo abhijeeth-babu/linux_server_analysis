@@ -61,7 +61,7 @@ def get_patched(ker_ver: str) -> float:
         return 0.7 + np.round(np.random.uniform(-0.15, 0.15), 2)
 
 
-def get_date(vul_pat, tot_vul) -> int:
+def get_date(vul_pat: int, tot_vul: int) -> int:
     days = 90 * (1 - vul_pat / tot_vul) + np.random.uniform(-10, 10)
     return int(days)
 
