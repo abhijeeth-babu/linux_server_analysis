@@ -68,10 +68,14 @@ def get_date(vul_pat: int, tot_vul: int) -> int:
 
 system_prefix = ["SYS", "APP", "WEB"]
 # primary keys
-sys_id = [f"{np.random.choice(system_prefix)}{fake.aba()}" for _ in range(num_servers)]
+sys_id = [
+    str(np.random.choice(system_prefix)) + str(fake.aba()) for _ in range(num_servers)
+]
 owner_prefix = ["au", "eu", "us"]
 owner_id = [
-    f"{np.random.choice(owner_prefix)}_{np.random.randint(10000,99999)+int(np.random.uniform(-20,40))}"
+    str(np.random.choice(owner_prefix))
+    + "_"
+    + str(np.random.randint(10000, 99999) + int(np.random.uniform(-20, 40)))
     for _ in range(25)
 ]
 owner_location_map = {"au": 1, "eu": 2, "us": 3}
@@ -103,23 +107,31 @@ location_table.to_csv("location_table.csv", index=False)
 # linux server table
 
 data = {}
+
 data["sys_id"] = sys_id
+
 data["distribution"] = [
     np.random.choice(linux_distributions) for _ in range(num_servers)
 ]
+
 data["kernel_ver"] = [
     np.random.choice(kernel_versions[distribution])
     for distribution in data["distribution"]
 ]
+
 data["total_vul"] = [get_vul(ker_ver[0]) for ker_ver in data["kernel_ver"]]
+
 data["vul_patched"] = [
     int(vul * get_patched(ker[0]))
     for ker, vul in zip(data["kernel_ver"], data["total_vul"])
 ]
+
 data["ip4_add"] = [fake.ipv4_private() for _ in range(num_servers)]
+
 data["owner_id"] = [np.random.choice(owner_id) for _ in range(num_servers)]
 
 error_term_in_days = np.random.normal(0, 5, num_servers)
+
 data["last_update_date"] = [
     datetime.now() - timedelta(get_date(vul_pat, tot_vul))
     for vul_pat, tot_vul in zip(data["vul_patched"], data["total_vul"])
