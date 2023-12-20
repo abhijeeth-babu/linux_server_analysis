@@ -1,8 +1,16 @@
+import os
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
 from faker import Faker
 from faker.providers import internet
+
+# Define the directory path
+directory = "./data"
+
+# Create the "data" directory if it doesn't exist
+if not os.path.exists(directory):
+    os.makedirs(directory)
 
 # Seed for reproducibility
 np.random.seed(42)
@@ -93,7 +101,7 @@ owner_table = pd.DataFrame(
     }
 )
 
-owner_table.to_csv("owner_table.csv", index=False)
+owner_table.to_csv("./data/owner_table.csv", index=False)
 
 # location table
 location_table = pd.DataFrame(
@@ -102,7 +110,7 @@ location_table = pd.DataFrame(
         "location": ["Australia", "European Union", "United States"],
     }
 )
-location_table.to_csv("location_table.csv", index=False)
+location_table.to_csv("./data/location_table.csv", index=False)
 
 # linux server table
 
@@ -138,7 +146,7 @@ data["last_update_date"] = [
 df = pd.DataFrame(data)
 
 # Save the DataFrame to a CSV file
-df.to_csv("linux_server_table.csv", index=False)
+df.to_csv("./data/linux_server_table.csv", index=False)
 
 print(
     "Dummy data for Linux servers has been generated and saved to 'linux_server_data.csv'"
