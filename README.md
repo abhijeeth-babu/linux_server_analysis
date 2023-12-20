@@ -338,6 +338,8 @@ These examples showcase the use of various SQL techniques like creating views, u
 - Leveraged the CSV files to create a "Server Vulnerability Dashboard" in Power BI.
 - Visualized and analyzed the Linux server vulnerabilities, providing a comprehensive view of the data.
 
+[Dashboard](https://github.com/abhijeeth-babu/linux_server_analysis/blob/main/dashboard/server_vulnerability_dashboard.pdf)
+
 ## Project Components
 
 - **generate_data.py:** Python script for generating synthetic data.
