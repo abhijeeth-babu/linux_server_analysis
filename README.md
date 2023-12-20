@@ -51,7 +51,7 @@ The `generate_data.py` script begins by importing necessary Python packages, inc
    sys_id = [str(np.random.choice(system_prefix)) + str(fake.aba()) for _ in range(num_servers)]
    owner_id = [str(np.random.choice(owner_prefix)) + "_" + str(...) for _ in range(25)]
    ```
-   Primary keys for systems and owners are created using a combination of random system prefixes, ABA (routing) numbers, and owner prefixes.
+   Primary keys for systems and owners are created using a combination of random system prefixes, fake id numbers, and owner prefixes.
 
 5. **Generating Dummy Tables:**
    ```python
