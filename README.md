@@ -225,8 +225,6 @@ Additionally, GROUP BY is employed in Q17 to calculate the average number of vul
 
 Finally, the usage of window functions is demonstrated in Q26, where servers are organized by the day they were patched. The query calculates running sums of both total vulnerabilities and patched vulnerabilities, providing a dynamic view of the data evolution over time.
 
-These examples showcase the versatility of SQL techniques in addressing diverse analytical needs, allowing for a comprehensive understanding of the generated synthetic data.
-
 #### View Creation (Example for Q14)
 ```sql
 -- Create or alter view with necessary info from all tables
