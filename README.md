@@ -339,6 +339,7 @@ These examples showcase the use of various SQL techniques like creating views, u
 - Visualized and analyzed the Linux server vulnerabilities, providing a comprehensive view of the data.
 
 [Dashboard](https://github.com/abhijeeth-babu/linux_server_analysis/blob/main/dashboard/server_vulnerability_dashboard.pdf)
+![image](https://github.com/abhijeeth-babu/linux_server_analysis/assets/121789736/ffbe36e6-1b6f-434f-a564-92995faf39f7)
 
 ## Project Components
 
